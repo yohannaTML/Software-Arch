@@ -2,12 +2,12 @@ package projet;
 
 import java.util.Iterator;
 
-public class AllMoviesIterator implements Iterator{
+public class GhibliIterator implements Iterator{
 
 	MovieInfo[] list;
 	int position = 0;
 	
-	public AllMoviesIterator(MovieInfo[] list) {
+	public GhibliIterator(MovieInfo[] list) {
 		this.list = list;
 	}
 
