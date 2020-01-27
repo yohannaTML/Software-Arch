@@ -13,10 +13,11 @@ public class DisneyMovie implements Movies{
 	
 	
 	public DisneyMovie() {
-		/*addInfo(" ");
-		addInfo(" ");
-		addInfo(" ");
-		*/
+		addInfo(" Aladdin", "Will smith", "Guy Ritchie", 2019);
+		addInfo("Mulan", "Ming-Na Wen", "Tony Bancroft", 1998);
+		addInfo("The Lion King", "Donald Glover", "Jon Favreau", 2019);
+		addInfo("Pocahontas", "Irene Bedard", "Mike Gabriel", 1995);
+		addInfo("The princess and the frog", "Anika Noni Rose", "Ron Clements", 2009);
 	}
 	
 	/**

@@ -4,16 +4,16 @@ import java.util.Iterator;
 
 public class Client {
 	DisneyMovie disneyMovie;
-	//MarvelMovie marvelMovie;
+	MarvelMovie marvelMovie;
 	
-	public Client(DisneyMovie disneyMovies) {
+	public Client(DisneyMovie disneyMovies, MarvelMovie marvelMovie) {
 		this.disneyMovie = disneyMovies;
-		//this.marvelMovie = marvelMovie;
+		this.marvelMovie = marvelMovie;
 	}
 	
 	public void printMovie() {
 		Iterator disneyIterator = disneyMovie.createIterator();
-		//Iterator marvelIterator = MarvelMovie.createIterator();
+		Iterator marvelIterator = marvelMovie.createIterator();
 		/*System.out.print("---------- Disney Category-------------");
 		printMovie(disneyIterator);
 		*/
