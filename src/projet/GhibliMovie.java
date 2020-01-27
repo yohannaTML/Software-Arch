@@ -8,15 +8,17 @@ import java.util.Iterator;
 
 public class GhibliMovie implements Movies {
 
-    String[] ghibli;
-    BufferedReader reader = null;
-    String line;
-    String[] lines;
+	
+	public GhibliMovie() {
+		String[] ghibli;
+		BufferedReader reader = null;
+		String line;
+		String[] lines;
 
-    try{
-        reader = new BufferedReader(new FileReader("./src/projet/ghiblifilm.txt"));
-        int t = reader.readLine();
-        ghibli = new String[t];
+		try{
+			reader = new BufferedReader(new FileReader("./src/projet/ghiblifilm.txt"));
+			int t = Integer.parseInt(reader.readLine());
+			ghibli = new String[t];
 
         while ((line = reader.readLine()) != null) {
             lines = line.split(";");
@@ -31,7 +33,7 @@ public class GhibliMovie implements Movies {
     catch(IOException e){}
 }
 
-    public addInfo(String title, String mainActor, String director, int yearOfPublication) {
+    public void addInfo(String title, String mainActor, String director, int yearOfPublication) {
 
     }
 
