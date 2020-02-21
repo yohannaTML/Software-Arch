@@ -3,5 +3,5 @@ package projet;
 import java.util.Iterator;
 
 public interface Movies {
-	public Iterator createIterator();
+	public Iterator<MovieInfo> createIterator();
 }
