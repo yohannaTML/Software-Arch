@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.Iterator;
 
 public class MarvelMovie implements Movies{
@@ -31,7 +30,7 @@ public class MarvelMovie implements Movies{
 	    
 	}
 	@Override
-	public Iterator createIterator() {
+	public Iterator<MovieInfo> createIterator() {
 		return marvel.iterator();
 	}
 	public void addInfo(String title, String mainActor, String director, int yearOfPublication)

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class GhibliMovie implements Movies {
@@ -48,6 +47,6 @@ public class GhibliMovie implements Movies {
 
     @Override
     public Iterator createIterator() {
-        return null;
+        return new GhibliIterator(ghibli);
     }
 }

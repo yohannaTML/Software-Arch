@@ -1,5 +1,9 @@
 package projet;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 
@@ -9,15 +13,26 @@ import java.util.Iterator;
  *
  */
 public class DisneyMovie implements Movies{
-	Hashtable movieInfos = new Hashtable();
-	
+	Hashtable<String, MovieInfo> movieInfos = new Hashtable<String, MovieInfo>();
 	
 	public DisneyMovie() {
-		addInfo(" Aladdin", "Will smith", "Guy Ritchie", 2019);
-		addInfo("Mulan", "Ming-Na Wen", "Tony Bancroft", 1998);
-		addInfo("The Lion King", "Donald Glover", "Jon Favreau", 2019);
-		addInfo("Pocahontas", "Irene Bedard", "Mike Gabriel", 1995);
-		addInfo("The princess and the frog", "Anika Noni Rose", "Ron Clements", 2009);
+		BufferedReader reader = null;
+		String line;
+		String lines[];
+	    try
+	      {
+	    	reader = new BufferedReader(new FileReader("./src/projet/disneymovie.txt"));
+	    	while ((line = reader.readLine()) != null) {
+				lines= line.split(";");
+				addInfo(lines[0],lines[1],lines[2],Integer.parseInt(lines[3]));
+			}
+			reader.close();
+	      }
+	    catch(FileNotFoundException exc)
+	      {
+	    	System.out.println("Problem to open");
+	      } catch (IOException e) {}
+	    
 	}
 	
 	/**
@@ -33,11 +48,11 @@ public class DisneyMovie implements Movies{
 	 * The getInfo() method returns the list of movie infos
 	 * @return
 	 */
-	public Hashtable getInfos() {
+	public Hashtable<String, MovieInfo> getInfos() {
 		return movieInfos;
 	}
 
-	public Iterator createIterator() {
+	public Iterator<MovieInfo> createIterator() {
 		return movieInfos.values().iterator();
 	}
 	
