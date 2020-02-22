@@ -9,7 +9,6 @@ public class Client {
 	public void addClient(String label, Movies movies) {
 		movie.put(label, movies);
 	}
-	
 	public void printMovie() {
 		Iterator disneyIterator = movie.get("disney").createIterator();
 		Iterator marvelIterator = movie.get("marvel").createIterator();

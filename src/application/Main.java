@@ -17,8 +17,6 @@ public class Main extends Application {
 			primaryStage.setTitle("Movies");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
-			Controller c = new Controller();
-			c.start();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

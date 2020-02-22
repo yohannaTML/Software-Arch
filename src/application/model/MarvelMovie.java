@@ -22,7 +22,7 @@ public class MarvelMovie implements Movies{
 	    	reader = new BufferedReader(new FileReader("./src/application/model/marvelfilm.txt"));
 	    	while ((line = reader.readLine()) != null) {
 				lines= line.split(";");
-				addInfo(lines[0],lines[1],lines[2],Integer.parseInt(lines[3]));
+				addInfo(lines[0],lines[1],lines[2],Integer.parseInt(lines[3]),lines[4]);
 			}
 			reader.close();
 	      }
@@ -36,9 +36,9 @@ public class MarvelMovie implements Movies{
 	public Iterator<MovieInfo> createIterator() {
 		return marvel.iterator();
 	}
-	public void addInfo(String title, String mainActor, String director, int yearOfPublication)
+	public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image)
 	{
-		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication);
+		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,image);
 		marvel.add(movieInfo);
 	}
 	

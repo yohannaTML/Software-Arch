@@ -27,7 +27,7 @@ public class GhibliMovie implements Movies {
 
         while ((line = reader.readLine()) != null) {
             lines = line.split(";");
-            addInfo(lines[0], lines[1], lines[2], Integer.parseInt(lines[3]));
+            addInfo(lines[0], lines[1], lines[2], Integer.parseInt(lines[3]),lines[4]);
             index++;
         }
         reader.close();
@@ -39,8 +39,8 @@ public class GhibliMovie implements Movies {
     catch(IOException e){}
 }
 
-    public void addInfo(String title, String mainActor, String director, int yearOfPublication) {
-        MovieInfo movie = new MovieInfo(title, mainActor, director, yearOfPublication);
+    public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image) {
+        MovieInfo movie = new MovieInfo(title, mainActor, director, yearOfPublication,"./Images/ghibli/"+image);
         ghibli[index] = movie;
     }
 

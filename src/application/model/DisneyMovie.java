@@ -26,7 +26,7 @@ public class DisneyMovie implements Movies{
 	    	reader = new BufferedReader(new FileReader("./src/application/model/disneymovie.txt"));
 	    	while ((line = reader.readLine()) != null) {
 				lines= line.split(";");
-				addInfo(lines[0],lines[1],lines[2],Integer.parseInt(lines[3]));
+				addInfo(lines[0],lines[1],lines[2],Integer.parseInt(lines[3]),lines[4]);
 			}
 			reader.close();
 	      }
@@ -41,9 +41,9 @@ public class DisneyMovie implements Movies{
 	 * To add a movie info, we created a new MovieInfo object, 
 	 * which passes through each argument, and then adds it to the HashMap
 	 */
-	public void addInfo(String title, String mainActor, String director, int yearOfPublication)
+	public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image)
 	{
-		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication);
+		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,"./Images/disney/"+image);
 		movieInfos.put(movieInfo.getTitle(), movieInfo);
 	}
 	/**
