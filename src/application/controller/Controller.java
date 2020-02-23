@@ -6,8 +6,9 @@ import java.util.Iterator;
 import java.util.ResourceBundle;
 
 
-
+import application.model.DisneyMovie;
 import application.model.MarvelMovie;
+import application.model.GhibliMovie;
 import application.model.MovieInfo;
 import application.model.Movies;
 import javafx.collections.FXCollections;
@@ -23,36 +24,62 @@ import javafx.scene.text.Font;
 import javafx.util.Callback;
 
 public class Controller implements Initializable{
-	
+
 	@FXML
-    private Tab marvel_tab;
+	private Tab marvel_tab;
 
-    @FXML
-    private Tab ghibli_tab;
+	@FXML
+	private Tab ghibli_tab;
 
-    @FXML
-    private Tab disney_tab;
-    
-    @FXML
-    private ListView<MovieInfo> listMarvel;
-	private final ObservableList<MovieInfo> data = FXCollections.observableArrayList();
+	@FXML
+	private Tab disney_tab;
 
+	@FXML
+	private ListView<MovieInfo> listDisney;
+	private final ObservableList<MovieInfo> data_disney = FXCollections.observableArrayList();
+
+	@FXML
+	private ListView<MovieInfo> listMarvel;
+	private final ObservableList<MovieInfo> data_marvel = FXCollections.observableArrayList();
+
+	@FXML
+	private ListView<MovieInfo> listGhibli;
+	private final ObservableList<MovieInfo> data_ghibli = FXCollections.observableArrayList();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		data.clear();
+		data_disney.clear();
+		data_marvel.clear();
+		data_ghibli.clear();
+
+		Movies disney = new DisneyMovie();
 		Movies marvel = new MarvelMovie();
+		Movies ghibli = new GhibliMovie();
+
+		Iterator d = disney.createIterator();
 		Iterator m = marvel.createIterator();
-		while(m.hasNext()) {
-			MovieInfo movieInfo = (MovieInfo)m.next();
-			data.add(movieInfo);
+		Iterator g = ghibli.createIterator();
+
+		while(d.hasNext()) {
+			MovieInfo movieInfo_d = (MovieInfo)d.next();
+			data_disney.add(movieInfo_d);
 		}
-		
+
+		while(m.hasNext()) {
+			MovieInfo movieInfo_m = (MovieInfo)m.next();
+			data_marvel.add(movieInfo_m);
+		}
+
+		while(g.hasNext()) {
+			MovieInfo movieInfo_g = (MovieInfo)g.next();
+			data_ghibli.add(movieInfo_g);
+		}
+
 		listMarvel.setCellFactory(new Callback<ListView<MovieInfo>,ListCell<MovieInfo>>(){
 
 			@Override
 			public ListCell<MovieInfo> call(ListView<MovieInfo> arg0) {
-				ListCell<MovieInfo> listecell= new ListCell<MovieInfo>() {
+				ListCell<MovieInfo> listcell_m= new ListCell<MovieInfo>() {
 					@Override
 					protected void updateItem(MovieInfo movie,boolean b) {
 						super.updateItem(movie, b);
@@ -61,18 +88,62 @@ public class Controller implements Initializable{
 							ImageView im = new ImageView(image);
 							setGraphic(im);
 							setText(movie.getTitle()+"\n"+movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
-							setFont(Font.font ("Verdana", 20));
+							//setFont(Font.font ("Verdana", 20));
 						}
 					}
 				};
-				return listecell;
+				return listcell_m;
 			}
-			
+
 		});
-		listMarvel.setItems(data);
-		
-		
-		
-		
+
+
+		listDisney.setCellFactory(new Callback<ListView<MovieInfo>,ListCell<MovieInfo>>() {
+			@Override
+			public ListCell<MovieInfo> call(ListView<MovieInfo> arg0) {
+				ListCell<MovieInfo> listcell_d= new ListCell<MovieInfo>(){
+					@Override
+					protected void updateItem(MovieInfo movie_d,boolean b) {
+						super.updateItem(movie_d, b);
+						if (movie_d != null) {
+							Image image = new Image(getClass().getResource("../."+movie_d.getImage()).toExternalForm(),250,250,true,false);
+							ImageView im = new ImageView(image);
+							setGraphic(im);
+							setText(movie_d.getTitle()+"\n"+movie_d.getYearOfPublication()+"\nDirector: "+movie_d.getDirector()+"\nMain Actor: "+movie_d.getMainActor()+"\nImage: "+movie_d.getImage());
+						}
+					}
+				};
+				return listcell_d;
+			}
+
+		});
+
+		listGhibli.setCellFactory(new Callback<ListView<MovieInfo>,ListCell<MovieInfo>>() {
+			@Override
+			public ListCell<MovieInfo> call(ListView<MovieInfo> arg0) {
+				ListCell<MovieInfo> listcell_g= new ListCell<MovieInfo>(){
+					@Override
+					protected void updateItem(MovieInfo movie_g,boolean b) {
+						super.updateItem(movie_g, b);
+						if (movie_g != null) {
+							Image image = new Image(getClass().getResource("../."+movie_g.getImage()).toExternalForm(),250,250,true,false);
+							ImageView im = new ImageView(image);
+							setGraphic(im);
+							setText(movie_g.getTitle()+"\n"+movie_g.getYearOfPublication()+"\nDirector: "+movie_g.getDirector()+"\nMain Actor: "+movie_g.getMainActor()+"\nImage: "+movie_g.getImage());
+						}
+					}
+				};
+				return listcell_g;
+			}
+
+		});
+
+
+		listMarvel.setItems(data_marvel);
+		listDisney.setItems(data_disney);
+		listGhibli.setItems(data_ghibli);
+
+
+
 	}
 }

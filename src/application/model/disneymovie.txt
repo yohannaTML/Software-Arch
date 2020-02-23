@@ -1,5 +1,5 @@
-Aladdin; Will smith; Guy Ritchie;2019
-Mulan; Ming-Na Wen; Tony Bancroft;1998
-The Lion King; Donald Glover; Jon Favreau;2019
-Pocahonta; Irene Bedard; Mike Gabriel;1995
-The princess and the frog; Anika Noni Rose; Ron Clements;2009
+Aladdin; Will smith; Guy Ritchie;2019;aladdin.png
+Mulan; Ming-Na Wen; Tony Bancroft;1998;mulan.png
+The Lion King; Donald Glover; Jon Favreau;2019;lion_king.png
+Pocahontas; Irene Bedard; Mike Gabriel;1995;pocahontas.png
+The princess and the frog; Anika Noni Rose; Ron Clements;2009;princess_frog.png
