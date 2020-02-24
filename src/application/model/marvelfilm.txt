@@ -1,4 +1,5 @@
 Captain America: First Avengers;Chris Evans;Joe Johnston;2011;CaptainAmerica.png
 Captain Marvel;Brie Larson;Anna Boden;2019;CaptainMarvel.png
+Les Gardiens de la Galaxie;Chris Pratt;James Gunn;2014;Guardians.png
 Thor;Chris Hemsworth;Kenneth Branagh;2011;Thor.png
 Avengers;Scarlett Johansson;Joss Whedon;2012;Avengers.png
