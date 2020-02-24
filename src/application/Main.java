@@ -1,7 +1,6 @@
 package application;
 	
 
-import application.controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;

@@ -91,7 +91,7 @@ public class Controller implements Initializable{
 							Image image = new Image(getClass().getResource("../../"+movie.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie.getTitle()+"\n"+movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
+							setText("Title: " + movie.getTitle()+"\n"+ "Year: " + movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
 						}
 					}
 				};
@@ -112,7 +112,7 @@ public class Controller implements Initializable{
 							Image image = new Image(getClass().getResource("../../"+movie_d.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie_d.getTitle()+"\n"+movie_d.getYearOfPublication()+"\nDirector: "+movie_d.getDirector()+"\nMain Actor: "+movie_d.getMainActor());
+							setText("Title: " + movie_d.getTitle()+"\n"+ "Year: " + movie_d.getYearOfPublication()+"\nDirector: "+movie_d.getDirector()+"\nMain Actor: "+movie_d.getMainActor());
 						}
 					}
 				};
@@ -132,7 +132,7 @@ public class Controller implements Initializable{
 							Image image = new Image(getClass().getResource("../../"+movie_g.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie_g.getTitle()+"\n"+movie_g.getYearOfPublication()+"\nDirector: "+movie_g.getDirector()+"\nMain Actor: "+movie_g.getMainActor());
+							setText("Title: " + movie_g.getTitle()+"\n"+ "Year: " + movie_g.getYearOfPublication()+"\nDirector: "+movie_g.getDirector()+"\nMain Actor: "+movie_g.getMainActor());
 						}
 					}
 				};
@@ -153,7 +153,7 @@ public class Controller implements Initializable{
 							Image image = new Image(getClass().getResource("../../"+movie.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie.getTitle()+"\n"+movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
+							setText("Title: " + movie.getTitle()+"\n"+ "Year: " + movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
 						}
 					}
 				};
