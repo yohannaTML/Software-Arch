@@ -45,12 +45,13 @@ public class Controller implements Initializable{
 	@FXML
 	private ListView<MovieInfo> listGhibli;
 	private final ObservableList<MovieInfo> data_ghibli = FXCollections.observableArrayList();
+	
+	@FXML
+	private ListView<MovieInfo> listAll;
+	private final ObservableList<MovieInfo> all_data = FXCollections.observableArrayList();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		data_disney.clear();
-		data_marvel.clear();
-		data_ghibli.clear();
 
 		Movies disney = new DisneyMovie();
 		Movies marvel = new MarvelMovie();
@@ -63,16 +64,19 @@ public class Controller implements Initializable{
 		while(d.hasNext()) {
 			MovieInfo movieInfo_d = (MovieInfo)d.next();
 			data_disney.add(movieInfo_d);
+			all_data.add(movieInfo_d);
 		}
 
 		while(m.hasNext()) {
 			MovieInfo movieInfo_m = (MovieInfo)m.next();
 			data_marvel.add(movieInfo_m);
+			all_data.add(movieInfo_m);
 		}
 
 		while(g.hasNext()) {
 			MovieInfo movieInfo_g = (MovieInfo)g.next();
 			data_ghibli.add(movieInfo_g);
+			all_data.add(movieInfo_g);
 		}
 
 		listMarvel.setCellFactory(new Callback<ListView<MovieInfo>,ListCell<MovieInfo>>(){
@@ -84,11 +88,10 @@ public class Controller implements Initializable{
 					protected void updateItem(MovieInfo movie,boolean b) {
 						super.updateItem(movie, b);
 						if(movie!=null) {
-							Image image = new Image(getClass().getResource("../../Images/marvel/"+movie.getImage()).toExternalForm(),250,250,true,false);
+							Image image = new Image(getClass().getResource("../../"+movie.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
 							setText(movie.getTitle()+"\n"+movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
-							//setFont(Font.font ("Verdana", 20));
 						}
 					}
 				};
@@ -106,10 +109,10 @@ public class Controller implements Initializable{
 					protected void updateItem(MovieInfo movie_d,boolean b) {
 						super.updateItem(movie_d, b);
 						if (movie_d != null) {
-							Image image = new Image(getClass().getResource("../."+movie_d.getImage()).toExternalForm(),250,250,true,false);
+							Image image = new Image(getClass().getResource("../../"+movie_d.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie_d.getTitle()+"\n"+movie_d.getYearOfPublication()+"\nDirector: "+movie_d.getDirector()+"\nMain Actor: "+movie_d.getMainActor()+"\nImage: "+movie_d.getImage());
+							setText(movie_d.getTitle()+"\n"+movie_d.getYearOfPublication()+"\nDirector: "+movie_d.getDirector()+"\nMain Actor: "+movie_d.getMainActor());
 						}
 					}
 				};
@@ -126,10 +129,10 @@ public class Controller implements Initializable{
 					protected void updateItem(MovieInfo movie_g,boolean b) {
 						super.updateItem(movie_g, b);
 						if (movie_g != null) {
-							Image image = new Image(getClass().getResource("../."+movie_g.getImage()).toExternalForm(),250,250,true,false);
+							Image image = new Image(getClass().getResource("../../"+movie_g.getImage()).toExternalForm(),250,250,true,false);
 							ImageView im = new ImageView(image);
 							setGraphic(im);
-							setText(movie_g.getTitle()+"\n"+movie_g.getYearOfPublication()+"\nDirector: "+movie_g.getDirector()+"\nMain Actor: "+movie_g.getMainActor()+"\nImage: "+movie_g.getImage());
+							setText(movie_g.getTitle()+"\n"+movie_g.getYearOfPublication()+"\nDirector: "+movie_g.getDirector()+"\nMain Actor: "+movie_g.getMainActor());
 						}
 					}
 				};
@@ -138,10 +141,30 @@ public class Controller implements Initializable{
 
 		});
 
+		listAll.setCellFactory(new Callback<ListView<MovieInfo>,ListCell<MovieInfo>>(){
 
+			@Override
+			public ListCell<MovieInfo> call(ListView<MovieInfo> arg0) {
+				ListCell<MovieInfo> listcell_m= new ListCell<MovieInfo>() {
+					@Override
+					protected void updateItem(MovieInfo movie,boolean b) {
+						super.updateItem(movie, b);
+						if(movie!=null) {
+							Image image = new Image(getClass().getResource("../../"+movie.getImage()).toExternalForm(),250,250,true,false);
+							ImageView im = new ImageView(image);
+							setGraphic(im);
+							setText(movie.getTitle()+"\n"+movie.getYearOfPublication()+"\nDirector: "+movie.getDirector()+"\nMain Actor: "+movie.getMainActor());
+						}
+					}
+				};
+				return listcell_m;
+			}
+
+		});
 		listMarvel.setItems(data_marvel);
 		listDisney.setItems(data_disney);
 		listGhibli.setItems(data_ghibli);
+		listAll.setItems(all_data);
 
 
 

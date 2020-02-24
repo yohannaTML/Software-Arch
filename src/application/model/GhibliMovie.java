@@ -40,7 +40,7 @@ public class GhibliMovie implements Movies {
 }
 
     public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image) {
-        MovieInfo movie = new MovieInfo(title, mainActor, director, yearOfPublication,"./Images/ghibli/"+image);
+        MovieInfo movie = new MovieInfo(title, mainActor, director, yearOfPublication,"/Images/ghibli/"+image);
         ghibli[index] = movie;
     }
 

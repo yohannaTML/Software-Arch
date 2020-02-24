@@ -43,7 +43,7 @@ public class DisneyMovie implements Movies{
 	 */
 	public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image)
 	{
-		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,"./Images/disney/"+image);
+		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,"/Images/disney/"+image);
 		movieInfos.put(movieInfo.getTitle(), movieInfo);
 	}
 	/**

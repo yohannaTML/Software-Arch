@@ -32,13 +32,14 @@ public class MarvelMovie implements Movies{
 	      } catch (IOException e) {}
 	    
 	}
+
 	@Override
 	public Iterator<MovieInfo> createIterator() {
 		return marvel.iterator();
 	}
 	public void addInfo(String title, String mainActor, String director, int yearOfPublication,String image)
 	{
-		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,image);
+		MovieInfo movieInfo = new MovieInfo(title, mainActor, director, yearOfPublication,"/Images/marvel/"+image);
 		marvel.add(movieInfo);
 	}
 	
