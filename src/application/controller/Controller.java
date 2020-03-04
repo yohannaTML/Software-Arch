@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.util.Callback;
 
+// The controller calls our model (classes) and controls what we are seeing at the screen.
 public class Controller implements Initializable{
 
 	@FXML
@@ -34,6 +35,12 @@ public class Controller implements Initializable{
 	@FXML
 	private Tab disney_tab;
 
+	/*In SceneBuilder we set a listview for each type of film. 
+	Then We fill our data in an observable arraylist for javafx and link it with a listview.
+	For each listview we define listcell which will be the pattern for one film. 
+	So we created the design for one cell (one film) in the listview. We put an image and its information.
+	*/
+	
 	@FXML
 	private ListView<MovieInfo> listDisney;
 	private final ObservableList<MovieInfo> data_disney = FXCollections.observableArrayList();
