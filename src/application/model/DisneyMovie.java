@@ -48,7 +48,7 @@ public class DisneyMovie implements Movies{
 	}
 	/**
 	 * The getInfo() method returns the list of movie infos
-	 * @return
+	 * @return : movieInfos
 	 */
 	public Hashtable<String, MovieInfo> getInfos() {
 		return movieInfos;
