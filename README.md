@@ -9,3 +9,5 @@
 ## Solution
 #### We use the Iterator Pattern
 #### The graphical interface is done with JavaFX
+
+![image](https://user-images.githubusercontent.com/47210862/76397960-55838a80-637c-11ea-8feb-30148cc408c5.png)
