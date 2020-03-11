@@ -3,6 +3,8 @@ package application.model;
 import java.util.Hashtable;
 import java.util.Iterator;
 
+/* This class is used if we don't want to use a graphic interface */
+
 public class Client {
 	Hashtable<String,Movies> movie = new Hashtable<String, Movies>();
 	
