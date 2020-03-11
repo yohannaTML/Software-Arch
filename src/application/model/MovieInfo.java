@@ -2,7 +2,7 @@ package application.model;
 
 /**
  * 
- * @author yohanna
+ * @author yohanna, Jeremy, Marine
  *A MovieInfo consists of a title, a mainActor, a director and 
  *and the year of publication. 
  */
