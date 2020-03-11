@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import application.model.MovieInfo;
 
+/* Array doesn’t have a built in Iterator so we built our own. */
+
 public class GhibliIterator implements Iterator{
 
 	MovieInfo[] list;
